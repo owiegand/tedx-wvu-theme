@@ -3,9 +3,9 @@
 .navbar-inverse {
   background-color: black;
   opacity: 0.8;
-  position: absolute;
   width: 100%;
   z-index: 999;
+  position: absolute;
 }
 .navbar-inverse .navbar-nav>li>a {
   color: white;
@@ -14,13 +14,28 @@
   color:red;
 }
 .header-image {
-  background-color: red;
+  background-color: black;
+}
+@media only screen and (min-width: 1920px) {
+  .header-carousel {
+    /**position: absolute; **/
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1920px; /** This must be set to the width of the images */
+    opacity: 0.6;
+  }
 }
 
 .header-carousel {
-  position: absolute;;
-  top: 0;
+  /**position: absolute; **/
+  opacity: 0.6;
 }
-
+@media only screen and (min-width: 728px) {
+  .navbar-nav > li > a {
+     line-height: 30px;;
+  }
+}
 
 /** End Nav Bar CSS */
