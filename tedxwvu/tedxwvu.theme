@@ -1,7 +1,8 @@
 <?php
-/**
- * @file
- * Bootstrap sub-theme.
- *
- * Place your custom PHP code in this file.
- */
+/*
+function tedxwvu_theme_suggestions_form_alter(&$suggestions, $vars, $hook) {
+  kint($vars);
+}
+*/
+
+?>

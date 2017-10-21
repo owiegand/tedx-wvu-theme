@@ -1,0 +1,118 @@
+{#
+/**
+* Our Story Page
+*/
+#}
+
+{% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
+{# Navbar #}
+{% if page.navigation or page.navigation_collapsible %}
+  {% block navbar %}
+    {%
+      set navbar_classes = [
+        'navbar',
+        theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
+        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
+      ]
+    %}
+    <div class="top-nav-bar">
+      <div class="left-col black-icons">
+        <a target="_blank"href="https://www.instagram.com/tedxwvu/"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+        <a target="_blank"href="https://www.facebook.com/TEDxWVU/"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+        <a target="_blank"href="https://twitter.com/tedxwvu"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://www.linkedin.com/company/25046736/"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+      </div>
+      <div class="right-col">
+        Register as a Speaker
+      </div>
+
+    </div>
+    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+      {% if not navbar_attributes.hasClass(container) %}
+        <div class="{{ container }}">
+      {% endif %}
+      <div class="navbar-header">
+        {{ page.navigation }}
+        {# .btn-navbar is used as the toggle for collapsed navbar content #}
+        {% if page.navigation_collapsible %}
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        {% endif %}
+      </div>
+
+      {# Navigation (collapsible) #}
+      {% if page.navigation_collapsible %}
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+          {{ page.navigation_collapsible }}
+        </div>
+      {% endif %}
+      {% if not navbar_attributes.hasClass(container) %}
+        </div>
+      {% endif %}
+    </header>
+  {% endblock %}
+{% endif %}
+
+
+<div role="main" class="main-container {{ container }} js-quickedit-main-content">
+  <div class="row">
+   Main Content
+  </div>
+</div>
+
+<div class="footer-background">
+  <div class="{{ container }}">
+    <div class="row footer-row">
+      <div class="col-md-4">
+        <div class="row footer-logo">
+          <div class="col-md-12">
+              <img src="/themes/tedxwvu/images/TEDxWVU5.png" height="90" />
+          </div>
+        </div>
+        <div class="row footer-social-media-icons">
+          <div class="col-md-12 social-icon-row">
+            <a class="social-icon-row" target="_blank"href="https://www.facebook.com/TEDxWVU/"><i class="fa fa-facebook-square fa-2x social-icons" aria-hidden="true"></i></a>
+            <a target="_blank"href="https://www.linkedin.com/company/25046736/"><i class="fa fa-linkedin-square fa-2x social-icons" aria-hidden="true"></i></a>
+            <i class="fa fa-envelope fa-2x social-icons" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 instagram-col">
+      <!-- LightWidget WIDGET -->
+      <script src="//lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/ac949aa314675b8495eb5f2c55ba9b1a.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+
+
+      </div>
+      <div class="col-md-4 twitter-col">
+        <a class="twitter-timeline" data-chrome="nofooter transparent noheader transparent" data-height="358" data-dnt="true" data-theme="dark" data-link-color="#E81C4F" href="https://twitter.com/tedxwvu">Tweets by TEDxWVU</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bottom-footer">
+  <div class="{{ container }}">
+    <div class="row">
+      <div class="col-md-12">
+        This independent TEDx event is operated under license from TED.
+      </div>
+    </div>
+    <div class="row">
+      {% if logged_in %}
+        <div class="col-md-offset-4 col-md-2">
+          <a href="/user/">My Account</a>
+        </div>
+        <div class="col-md-2">
+          <a href="/user/logout/">Logout</a>
+        </div>
+      {% else %}
+        <div class="col-md-12">
+          <a href="/user/login/">Login</a>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>

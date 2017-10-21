@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-md-4">
+    {{ _context[''].field_name }}
+  </div>
+  <div class="col-md-4">
+    {{ _context[''].field_email }}
+  </div>
+  <div class="col-md-4">
+    {{ _context[''].field_phone }}
+  </div>
+</div>
+
+
+<div class="from">
+
+</div>
+
+{# Renders the rest of the form #}
+{{ _context['']|without('field_name') }}
