@@ -1,0 +1,31 @@
+.our-story-background {
+  background-color: #cccccc;
+}
+.tedx-background {
+  color: red;
+}
+header#navbar.navbar.navbar-inverse.navbar-static-top {
+  margin-bottom: 0px;
+}
+
+.our-story-header-image {
+  background-image: url("/themes/tedxwvu/images/inno-52.jpg");
+  background-size: cover;
+  height: 250px;
+}
+.row-bottom-padding {
+  padding-bottom: 20px;
+}
+
+.ted-background {
+  background-color: red;
+  color: white;
+}
+.padding-top {
+  padding-top: 10px;
+}
+
+.bottom-border {
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}

@@ -1,5 +1,17 @@
 /** Nav Bar CSS */
 
+.navbar-inverse .navbar-nav > .active > a {
+  color:red;
+}
+.top-nav-bar .right-col a {
+  color: white;
+  text-decoration: none;
+}
+.top-nav-bar .right-col a:hover {
+  color: black;
+}
+
+
 .navbar-inverse {
   background-color: black;
 }

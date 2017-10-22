@@ -10,10 +10,103 @@
   </div>
 </div>
 
-
-<div class="from">
-
+<div class="row space-between-rows">
+  <div class="col-md-3">
+    {{ _context[''].field_street_address }}
+  </div>
+  <div class="col-md-3">
+    {{ _context[''].field_city }}
+  </div>
+  <div class="col-md-3">
+    {{ _context[''].field_state }}
+  </div>
+  <div class="col-md-3">
+    {{ _context[''].field_zip }}
+  </div>
 </div>
 
+<div class="row space-between-rows">
+  <div class="col-md-6">
+    {{ _context[''].field_company }}
+  </div>
+  <div class="col-md-6">
+    {{ _context[''].field_accommodations }}
+  </div>
+</div>
+
+<div class="row space-between-rows">
+  <div class="col-md-6">
+    {{ _context[''].field_category }}
+  </div>
+  <div class="col-md-6">
+    {{ _context[''].field_youtube_link }}
+  </div>
+</div>
+
+<div class="row space-between-rows">
+  <div class="col-md-12">
+    {{ _context[''].field_concept }}
+  </div>
+</div>
+
+<div class="row space-between-rows">
+  <div class="col-md-12">
+    {{ _context[''].field_talk_fit }}
+  </div>
+</div>
+
+<div class="row space-between-rows">
+    <div class="col-md-12">
+    {{ _context[''].field_experience }}
+  </div>
+</div>
+
+<div class="row space-between-rows">
+    <div class="col-md-12">
+    {{ _context[''].field_legal }}
+    <p>
+    <ol>
+      <li>
+      I understand that this is an application and does not guarantee that I will present or perform at this or any other TEDxWVU event
+      </li>
+      <li>
+      I may not promote any business or provide any special offers or discounts before, during, or after my program in the Media Innovation Center.
+      </li>
+      <li>
+      I agree that decisions regarding the acceptance of my TEDx Talk is left to the discretion of the TEDxWVU staff
+      </li>
+      <li>
+      I understand if chosen I will be working with the TEDxWVU committee to edit and polish my presentation as needed to reflect the TEDx license agreement terms and conditions
+      </li>
+    </ol>
+    </p>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
 {# Renders the rest of the form #}
-{{ _context['']|without('field_name') }}
+{{ _context['']|without(
+  'field_name',
+  'field_email',
+  'field_phone',
+  'field_street_address',
+  'field_city',
+  'field_state',
+  'field_zip',
+  'field_company',
+  'field_accommodations',
+  'field_category',
+  'field_youtube_link',
+  'field_talk_fit',
+  'field_experience',
+  'field_concept',
+  'field_legal'
+  )
+}}

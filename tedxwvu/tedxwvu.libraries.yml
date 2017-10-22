@@ -2,6 +2,9 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+      css/speaker-application-page.css: {}
+      css/FAQs-page.css: {}
+      css/our-story.css: {}
       css/font-awesome/css/font-awesome.min.css: {}
   js:
   dependencies:
